@@ -3,10 +3,8 @@ package com.crud.tasks.domain;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GeneratorType;
-
 import javax.persistence.*;
-import javax.validation.valueextraction.UnwrapByDefault;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,7 +12,7 @@ import javax.validation.valueextraction.UnwrapByDefault;
 @Entity(name = "tasks")
 public class Task {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "name")
