@@ -36,19 +36,22 @@ public class TrelloClientTest {
         when(trelloConfig.getTrelloApiEndpoint()).thenReturn("http://test.com");
         when(trelloConfig.getTrelloAppKey()).thenReturn("test");
         when(trelloConfig.getTrelloToken()).thenReturn("test");
+        when(trelloConfig.getTrelloUserName()).thenReturn("/members/lesialockhart/boards");
+
     }
 
     @Test
     public void shouldFetchTrelloBoards() throws URISyntaxException{
         //Given
         TrelloBoardDto[] trelloBoards = new TrelloBoardDto[1];
-        trelloBoards[0] = new TrelloBoardDto("test_id", "test_boards", new ArrayList<>());
+        trelloBoards[0] = new TrelloBoardDto("test_id", "test_board", new ArrayList<>());
 
         URI url = new URI("http://test.com/members/lesialockhart/boards?key=test&token=test&fields=name,id&lists=all");
 
         when(restTemplate.getForObject(url, TrelloBoardDto[].class)).thenReturn(trelloBoards);
 
         //When
+        System.out.println(url);
         List<TrelloBoardDto> fetchedTrelloBoards = trelloClient.getTrelloBoards();
 
         //Then

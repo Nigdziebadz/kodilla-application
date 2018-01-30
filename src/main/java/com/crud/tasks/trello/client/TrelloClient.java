@@ -39,6 +39,7 @@ public class TrelloClient {
                 .queryParam("lists", "all").build().encode().toUri();
 
         try {
+            System.out.println(url);
             TrelloBoardDto[] boardResponse = restTemplate.getForObject(url, TrelloBoardDto[].class);
             return Arrays.asList(ofNullable(boardResponse).orElse(new TrelloBoardDto[0]));
         }
