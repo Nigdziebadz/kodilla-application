@@ -31,17 +31,16 @@ public class SimpleEmailService {
     }
 
     private SimpleMailMessage createMailMessage(final Mail mail) {
-        SimpleMailMessage setMail = new SimpleMailMessage();
-        setMail.setTo(mail.getMailTo());
-        setMail.setSubject(mail.getSubject());
 
-        if (mail.getCc() != "") {
+        SimpleMailMessage setMail = new SimpleMailMessage();
+        if (mail.getCc() != "" && mail.getCc() != null) {
             setMail.setCc(mail.getCc());
         } else {
             setMail.setCc(mail.getCc());
             LOGGER.info("CC empty, no CC set");
         }
-
+        setMail.setTo(mail.getMailTo());
+        setMail.setSubject(mail.getSubject());
         setMail.setText(mail.getMessage());
         return setMail;
     }
