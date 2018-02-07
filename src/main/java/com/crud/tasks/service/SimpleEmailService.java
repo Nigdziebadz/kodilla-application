@@ -33,7 +33,7 @@ public class SimpleEmailService {
     private SimpleMailMessage createMailMessage(final Mail mail) {
 
         SimpleMailMessage setMail = new SimpleMailMessage();
-        if (mail.getCc() != "" && mail.getCc() != null) {
+        if (mail.getCc() != null) {
             setMail.setCc(mail.getCc());
         } else {
             setMail.setCc(mail.getCc());
