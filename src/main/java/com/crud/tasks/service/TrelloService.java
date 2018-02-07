@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static java.util.Optional.ofNullable;
+
 @Service
 public class TrelloService {
 
@@ -31,15 +33,14 @@ public class TrelloService {
 
     public CreatedTrelloCard createTrelloCard(final TrelloCardDto trelloCardDto) {
         CreatedTrelloCard newCard = trelloClient.createNewCard(trelloCardDto);
-
-        emailService.send(new Mail(
+        ofNullable(newCard).ifPresent((card ->
+                emailService.send(new Mail(
                 adminConfig.getAdminMail(),
                 SUBJECT,
                 "",
-                "New Card: " + trelloCardDto.getName()
+                "New Card: " + card.getName()
                         + "has beed created on your Trello Account"
-        ));
-
+        ))));
         return newCard;
     }
 }
