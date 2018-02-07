@@ -37,7 +37,7 @@ public class TrelloService {
                 emailService.send(new Mail(
                 adminConfig.getAdminMail(),
                 SUBJECT,
-                "",
+                null,
                 "New Card: " + card.getName()
                         + "has beed created on your Trello Account"
         ))));
