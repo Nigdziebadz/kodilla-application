@@ -41,6 +41,7 @@ public class TrelloService {
                 "New Card: " + card.getName()
                         + "has beed created on your Trello Account"
         ))));
+        System.out.println("Mail sent to: " + adminConfig.getAdminMail());
         return newCard;
     }
 }

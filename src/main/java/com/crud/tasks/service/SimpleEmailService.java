@@ -36,7 +36,6 @@ public class SimpleEmailService {
         if (mail.getCc() != null) {
             setMail.setCc(mail.getCc());
         } else {
-            setMail.setCc(mail.getCc());
             LOGGER.info("CC empty, no CC set");
         }
         setMail.setTo(mail.getMailTo());

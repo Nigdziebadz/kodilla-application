@@ -5,8 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.util.List;
-
 @AllArgsConstructor
 @Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -16,5 +14,5 @@ public class TrelloBadgesDto {
     private int votes;
 
     @JsonProperty("attachmentsByType")
-    private List<TrelloAttachmentsByTypeDto> attachments;
+    private TrelloAttachmentsByTypeDto attachments;
 }
