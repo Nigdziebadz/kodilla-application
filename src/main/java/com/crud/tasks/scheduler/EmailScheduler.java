@@ -24,20 +24,12 @@ public class EmailScheduler {
     @Scheduled(fixedDelay = 10000)
     public void sendInfoEmail() {
         long size = taskRepository.count();
-        if (size == 1) {
             simpleEmailService.send(new Mail(
                     adminConfig.getAdminMail(),
                     SUBJECT,
                     null,
-                    "Currently in databases u got " + size + " task"
-            ));
-        } else {
-            simpleEmailService.send(new Mail(
-                    adminConfig.getAdminMail(),
-                    SUBJECT,
-                    null,
-                    "Currently in databases u got " + size + " tasks"
-            ));
-        }
+                    "Currently in databases u got " + ((size == 1) ? size + " task" : size + " tasks"
+            )));
+
     }
 }
