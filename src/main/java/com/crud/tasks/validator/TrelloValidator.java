@@ -1,4 +1,4 @@
-package validator;
+package com.crud.tasks.validator;
 
 import com.crud.tasks.domain.TrelloBoard;
 import com.crud.tasks.domain.TrelloCard;
@@ -16,7 +16,6 @@ public class TrelloValidator {
     private final static Logger LOGGER = LoggerFactory.getLogger(TrelloValidator.class);
 
     public void validateCard(final TrelloCard trelloCard) {
-
         if(trelloCard.getName().equalsIgnoreCase("test")) {
             LOGGER.info("Testing app");
         } else {
