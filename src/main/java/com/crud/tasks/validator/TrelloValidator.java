@@ -15,11 +15,13 @@ public class TrelloValidator {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(TrelloValidator.class);
 
-    public void validateCard(final TrelloCard trelloCard) {
-        if(trelloCard.getName().equalsIgnoreCase("test")) {
-            LOGGER.info("Testing app");
+    public boolean validateCard(final TrelloCard trelloCard) {
+        if (trelloCard.getName().equalsIgnoreCase("test")) {
+            LOGGER.info("Just testing app - ignore");
+            return false;
         } else {
-            LOGGER.info("App ok");
+            LOGGER.info("Not test case - carry on");
+            return true;
         }
     }
 
@@ -32,3 +34,4 @@ public class TrelloValidator {
         return filteredBoards;
     }
 }
+
