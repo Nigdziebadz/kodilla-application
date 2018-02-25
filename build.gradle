@@ -43,6 +43,8 @@ dependencies {
 	compile('io.springfox:springfox-swagger-ui:2.7.0')
 	//LOCAL_MYSQL
 	compile('mysql:mysql-connector-java')
+	//GSON
+	compile('com.google.code.gson:gson:2.8.2')
 	//MAIL
 	compile('org.springframework.boot:spring-boot-starter-mail:1.5.9.RELEASE')
 	//HEROKU_DEP
