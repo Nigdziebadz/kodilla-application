@@ -70,6 +70,8 @@ public class TaskControllerTest {
                 "Task 1 content");
 
         when(dbService.saveTask(ArgumentMatchers.any(Task.class))).thenReturn(task);
+        when(taskMapper.mapToTaskDto(ArgumentMatchers.any(Task.class))).thenReturn(taskDtoList.get(0));
+        when(taskMapper.mapToTask(ArgumentMatchers.any(TaskDto.class))).thenReturn(task);
 
         Gson gson =  new Gson();
         String jsonContent = gson.toJson(task);

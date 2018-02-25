@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '2.0.0.M7'
+		springBootVersion = '2.0.0.M4'
 	}
 	repositories {
 		mavenCentral()
@@ -35,18 +35,22 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile group: 'org.projectlombok', name: 'lombok', version: '1.16.18'
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	//ACTUATOR
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	//LOCAL_MYSQL
+	compile('mysql:mysql-connector-java')
 	//SWAGER
 	compile('io.springfox:springfox-swagger2:2.7.0')
 	compile('io.springfox:springfox-swagger-ui:2.7.0')
-	//LOCAL_MYSQL
-	compile('mysql:mysql-connector-java')
 	//GSON
 	compile('com.google.code.gson:gson:2.8.2')
 	//MAIL
 	compile('org.springframework.boot:spring-boot-starter-mail:1.5.9.RELEASE')
+
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
 	//HEROKU_DEP
 //	compile('org.postgresql:postgresql')
 
