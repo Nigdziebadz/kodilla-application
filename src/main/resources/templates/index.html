@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My welcome page</title>
+</head>
+<body>
+<h3> First impression of my page</h3>
+
+<!--/*@thymeVar id="variable" type="com.crud.task.controller.StaticWebPageController"*/-->
+<span th:text="${variable}"></span>
+
+<br><br>
+<h4>Testing Thymeleaf</h4>
+<!--/*@thymeVar id="one" type="com.crud.task.controller.StaticWebPageController"*/-->
+<!--/*@thymeVar id="two" type="com.crud.task.controller.StaticWebPageController"*/-->
+
+<b>(1)</b>
+<br>
+First test task(no css because i'm lazy):
+<br>
+1 + 2 = <span th:text="${one} + ${two}"></span>
+
+<br>
+<br>
+
+<b>(2)</b>
+<br>
+Second set of test tasks:
+<br>
+    2 * 2 = <span th:text="${two} * ${two}"></span>
+    <br>
+    2 * 2 + 2 = <span th:text="${two} * ${two} + ${two}"></span>
+    <br>
+    2 - 2 * 2 = <span th:text="${two} - ${two} * ${two}"></span>
+
+</body>
+</html>
