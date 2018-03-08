@@ -20,7 +20,8 @@ public class EmailScheduler {
 
     private static final String SUBJECT = "Trello - once a day mail";
 
-    @Scheduled(cron = "0 0 10 * * *")
+//    @Scheduled(cron = "0 0 10 * * *")
+    @Scheduled(fixedDelay = 10000L)
     public void sendInfoEmail() {
         long size = taskRepository.count();
             simpleEmailService.send(new Mail(

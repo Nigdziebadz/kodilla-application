@@ -62,7 +62,7 @@ public class MailCreatorService {
         context.setVariable("howManyTasks", "Currently in databases u got "
                 + ((size == 1) ? size + " task" : size + " tasks"));
         context.setVariable("preview", "Info about create new card");
-        context.setVariable("goodbye", "See you later :)");
+        context.setVariable("goodbye", "Bye");
         context.setVariable("companyName", companyInfo.getCompanyName());
         context.setVariable("companyMail", "mail: " + companyInfo.getCompanyEmail());
         context.setVariable("companyPhone", "tel: " + companyInfo.getCompanyPhone());
